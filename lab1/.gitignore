@@ -1,3 +1,5 @@
 lab1/*.o
 *.o
 lab1/*.o*
+.gitignore
+lab1/first.o
