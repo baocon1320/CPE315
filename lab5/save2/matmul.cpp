@@ -26,7 +26,6 @@ void matmul(float* C, const float* A, const float* B, unsigned int hA,
      for(unsigned int b = 0; b < wB; b += size)
      {
         unsigned int e = b + size;
-         //C[a * wB + b] = 0.0;
          for(unsigned int c = 0; c < hA; c+= size)
          {
             unsigned int f = c + size;
@@ -34,15 +33,10 @@ void matmul(float* C, const float* A, const float* B, unsigned int hA,
             {
                for(unsigned int j = b; j < e; j++)
                {
-                 // double sum = 0;
                   for(unsigned int k = c; k < f; k ++)
                   {  
-                    // double e = A[i * wA + k];
-                    // double f = B[j * wB + k];
-                    // sum += e * f;
                      C[i * wB + j] += A[i * wA + k] * B[j * wB + k];
                   }
-                 // C[i * wB + j] = (float)sum;
                }
 
             }
